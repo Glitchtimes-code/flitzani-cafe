@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Φλιτζάνι | Specialty καφές</title>
+  <meta name="description" content="Φλιτζάνι: specialty καφές, φρέσκο ψήσιμο και σπιτικά γλυκά σε έναν ζεστό χώρο.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+Display:wght@400;600&display=swap&subset=greek" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#top" class="logo">Φλιτζάνι</a>
+    <button class="nav-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#menu">Μενού</a>
+      <a href="#hours">Ωράριο</a>
+      <a href="#contact">Επικοινωνία</a>
+      <a href="#map">Χάρτης</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Specialty καφές · Φρέσκο ψήσιμο</p>
+        <h1>Ο καφές σου,<br>χωρίς βιασύνη.</h1>
+        <p class="lead">Επιλεγμένοι κόκκοι, προσεγμένη εκχύλιση και σπιτικά γλυκά σε έναν χώρο που σε κάνει να μείνεις λίγο παραπάνω.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Δες το μενού</a>
+          <a href="#contact" class="btn btn-ghost">Επικοινωνία</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ΜΕΝΟΥ -->
+    <section id="menu" class="section">
+      <div class="container">
+        <h2>Μενού</h2>
+        <p class="section-intro">Φρέσκο ψήσιμο κάθε εβδομάδα και γλυκά φτιαγμένα στο μαγαζί.</p>
+
+        <div class="menu-grid">
+
+          <article class="menu-card">
+            <h3>Ζεστοί καφέδες</h3>
+            <ul class="menu-list">
+              <li><span class="item">Espresso</span><span class="price">2,50 €</span></li>
+              <li><span class="item">Double Espresso</span><span class="price">3,20 €</span></li>
+              <li><span class="item">Flat White</span><span class="price">3,80 €</span></li>
+              <li><span class="item">Cappuccino</span><span class="price">3,60 €</span></li>
+              <li><span class="item">Φίλτρου V60</span><span class="price">4,20 €</span></li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <h3>Κρύοι καφέδες</h3>
+            <ul class="menu-list">
+              <li><span class="item">Freddo Espresso</span><span class="price">3,20 €</span></li>
+              <li><span class="item">Freddo Cappuccino</span><span class="price">3,60 €</span></li>
+              <li><span class="item">Cold Brew</span><span class="price">4,00 €</span></li>
+              <li><span class="item">Espresso Tonic</span><span class="price">4,50 €</span></li>
+            </ul>
+          </article>
+
+          <article class="menu-card">
+            <h3>Γλυκά</h3>
+            <ul class="menu-list">
+              <li><span class="item">Κρουασάν βουτύρου</span><span class="price">2,80 €</span></li>
+              <li><span class="item">Σπιτικό brownie</span><span class="price">3,80 €</span></li>
+              <li><span class="item">Μηλόπιτα</span><span class="price">3,50 €</span></li>
+              <li><span class="item">Cheesecake βύσσινο</span><span class="price">4,50 €</span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ΩΡΑΡΙΟ -->
+    <section id="hours" class="section section-alt">
+      <div class="container">
+        <h2>Ωράριο</h2>
+        <p id="open-badge" class="badge" aria-live="polite" hidden></p>
+
+        <ul class="hours-list">
+          <li data-day="1" data-open="07:30" data-close="22:00"><span>Δευτέρα</span><span>07:30 – 22:00</span></li>
+          <li data-day="2" data-open="07:30" data-close="22:00"><span>Τρίτη</span><span>07:30 – 22:00</span></li>
+          <li data-day="3" data-open="07:30" data-close="22:00"><span>Τετάρτη</span><span>07:30 – 22:00</span></li>
+          <li data-day="4" data-open="07:30" data-close="22:00"><span>Πέμπτη</span><span>07:30 – 22:00</span></li>
+          <li data-day="5" data-open="07:30" data-close="22:00"><span>Παρασκευή</span><span>07:30 – 22:00</span></li>
+          <li data-day="6" data-open="08:30" data-close="23:00"><span>Σάββατο</span><span>08:30 – 23:00</span></li>
+          <li data-day="0" data-open="09:00" data-close="20:00"><span>Κυριακή</span><span>09:00 – 20:00</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ΕΠΙΚΟΙΝΩΝΙΑ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Επικοινωνία</h2>
+        <p class="section-intro">Κρατήσεις για παρέες, ιδιωτικές εκδηλώσεις ή απλά μια ερώτηση; Γράψε μας και θα απαντήσουμε σύντομα.</p>
+
+        <form id="contact-form" class="contact-form" name="contact" method="POST"
+              data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+
+          <!-- Honeypot για spam: κρυφό πεδίο που τα bots το συμπληρώνουν -->
+          <p class="hp" aria-hidden="true">
+            <label>Μην το συμπληρώσεις: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="field">
+            <label for="name">Όνομα</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Μήνυμα</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Αποστολή</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ΧΑΡΤΗΣ -->
+    <section id="map" class="section section-alt">
+      <div class="container">
+        <h2>Βρες μας</h2>
+
+        <div class="map-layout">
+          <address class="map-info">
+            <h3>Φλιτζάνι</h3>
+            <p>Αρμοδίου 12<br>Ψυρρή, Αθήνα 105 54</p>
+            <p>
+              <a href="tel:+302105550123">210 555 0123</a><br>
+              <a href="mailto:hello@filizani.example">hello@filizani.example</a>
+            </p>
+            <a class="btn btn-primary"
+               href="https://www.google.com/maps/dir/?api=1&destination=37.9790,23.7255"
+               target="_blank" rel="noopener noreferrer">Οδηγίες</a>
+          </address>
+
+          <div class="map-frame">
+            <iframe
+              title="Χάρτης με την τοποθεσία του καφέ Φλιτζάνι"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=23.7205%2C37.9765%2C23.7305%2C37.9815&amp;layer=mapnik&amp;marker=37.9790%2C23.7255"
+              loading="lazy"></iframe>
+            <a class="map-link"
+               href="https://www.openstreetmap.org/?mlat=37.9790&amp;mlon=23.7255#map=17/37.9790/23.7255"
+               target="_blank" rel="noopener noreferrer">Προβολή μεγαλύτερου χάρτη</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Φλιτζάνι. Φανταστικό καφέ για σκοπούς επίδειξης.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
