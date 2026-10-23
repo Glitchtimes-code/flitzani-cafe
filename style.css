@@ -53,7 +53,11 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
-.logo { font-family: var(--font-head); font-size: 1.4rem; color: var(--accent); }
+.logo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-head); font-size: 1.4rem; color: var(--accent);
+}
+.logo-icon { width: 28px; height: 28px; flex: none; }
 
 .nav-toggle {
   width: 44px; height: 44px; padding: 0;

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Φλιτζάνι">
+  <rect width="32" height="32" rx="7" fill="#1a1410"/>
+  <g fill="none" stroke="#c58b4e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ατμός -->
+    <path d="M11 4.5c-1.6 1.7 1.6 2.9 0 4.8"/>
+    <path d="M16 3.5c-1.6 1.7 1.6 2.9 0 4.8"/>
+    <path d="M21 4.5c-1.6 1.7 1.6 2.9 0 4.8"/>
+    <!-- φλιτζάνι -->
+    <path d="M7.5 13h15v5.5a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z"/>
+    <path d="M22.5 15h1.3a2.9 2.9 0 0 1 0 5.8h-1.9"/>
+    <!-- πιατάκι -->
+    <path d="M6 28h18"/>
+  </g>
+</svg>
