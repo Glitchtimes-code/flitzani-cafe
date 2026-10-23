@@ -83,9 +83,11 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   min-height: 100svh;
   display: flex; align-items: center;
   padding: calc(var(--header-h) + 40px) var(--pad-x) 60px;
-  /* Προσωρινό φόντο: αντικατάστησέ το με φωτογραφία (Unsplash/Pexels) */
+  /* Φωτογραφία images/hero.webp κάτω από σκούρο overlay. Αν το αρχείο λείπει,
+     το url() αγνοείται και φαίνεται το radial-gradient. */
   background:
-    linear-gradient(180deg, rgba(26,20,16,.55), rgba(26,20,16,.95)),
+    linear-gradient(180deg, rgba(26,20,16,.6), rgba(26,20,16,.95)),
+    url("images/hero.webp") center / cover no-repeat,
     radial-gradient(circle at 70% 20%, #4a3424 0%, var(--bg) 60%);
 }
 .hero-content { max-width: 640px; width: 100%; }
@@ -110,6 +112,30 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
 /* ===== Sections ===== */
 .section { padding: 72px 0; }
 .section-alt { background: var(--surface); }
+
+/* ===== Η ιστορία μας ===== */
+.story { display: grid; gap: 32px; }
+.story-text p { color: var(--muted); max-width: 56ch; margin: 0 0 16px; }
+
+.highlights { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 20px; }
+.highlights li { padding-left: 16px; border-left: 2px solid var(--accent); }
+.highlights h3 { font-size: 1.1rem; margin: 0 0 4px; }
+.highlights p { margin: 0; font-size: .95rem; }
+
+.story-media {
+  min-height: 280px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  /* Φωτογραφία images/interior.webp, με gradient ως fallback */
+  background:
+    url("images/interior.webp") center / cover no-repeat,
+    radial-gradient(circle at 30% 30%, #4a3424 0%, var(--surface) 70%);
+}
+
+@media (min-width: 800px) {
+  .story { grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .story-media { min-height: 460px; }
+}
 
 /* ===== Μενού ===== */
 .section-intro { color: var(--muted); max-width: 52ch; margin: 0 0 32px; }
