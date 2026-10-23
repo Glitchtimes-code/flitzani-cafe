@@ -191,7 +191,18 @@ main:focus { outline: none; } /* το main παίρνει focus μόνο προ�
   border-bottom: 1px dashed var(--border);
 }
 .menu-list li:last-child { border-bottom: 0; }
-.menu-list .item { flex: 1; }
+.menu-list .item { flex: 1; min-width: 0; }
+.menu-list .name { font-weight: 500; }
+.menu-list .desc { display: block; margin-top: 2px; color: var(--muted); font-size: .85rem; line-height: 1.45; }
+
+.tag {
+  display: inline-block; margin-left: 8px; padding: 1px 8px;
+  border: 1px solid currentColor; border-radius: 999px;
+  font-size: .68rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  vertical-align: middle;
+}
+.tag-new { color: var(--accent); }
+.tag-vegan { color: #9db57a; }
 .menu-list .price { color: var(--accent); font-weight: 600; white-space: nowrap; }
 
 @media (min-width: 800px) {
