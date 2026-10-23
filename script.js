@@ -87,5 +87,66 @@ if (form) {
   });
 }
 
+// Scroll animations (fade-in) με IntersectionObserver
+(function initReveal() {
+  const targets = document.querySelectorAll(
+    ".section h2, .story-text, .story-media, .menu-card, .hours-list, .contact-form, .map-info, .map-frame"
+  );
+  if (!("IntersectionObserver" in window)) return; // χωρίς υποστήριξη, όλα μένουν ορατά
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  targets.forEach((el, i) => {
+    el.classList.add("reveal");
+    // μικρή καθυστέρηση ανά κάρτα μενού για πιο ομαλό εφέ
+    if (el.classList.contains("menu-card")) {
+      el.style.setProperty("--delay", `${(i % 3) * 90}ms`);
+    }
+    observer.observe(el);
+  });
+})();
+
+// Scrollspy: επισήμανση του ενεργού συνδέσμου στο menu
+(function initScrollspy() {
+  const links = [...document.querySelectorAll(".nav a[href^='#']")];
+  const sections = links
+    .map((a) => document.querySelector(a.getAttribute("href")))
+    .filter((el) => el && el.tagName === "SECTION");
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  const setActive = (id) => {
+    links.forEach((a) => {
+      const isActive = id && a.getAttribute("href") === `#${id}`;
+      a.classList.toggle("active", Boolean(isActive));
+      if (isActive) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        } else if (entry.target === sections[0] && entry.boundingClientRect.top > 0) {
+          setActive(null); // έχουμε γυρίσει πάνω από την πρώτη ενότητα (hero)
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" } // ενεργό είναι το section που περνά από τη μέση της οθόνης
+  );
+
+  sections.forEach((s) => observer.observe(s));
+})();
+
 // Τρέχον έτος στο footer
 document.getElementById("year").textContent = new Date().getFullYear();

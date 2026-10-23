@@ -76,7 +76,8 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
 }
 .nav.open { display: flex; }
 .nav a { padding: 16px var(--gutter); border-top: 1px solid var(--border); }
-.nav a:hover { color: var(--accent); }
+.nav a:hover,
+.nav a.active { color: var(--accent); }
 
 /* ===== Hero ===== */
 .hero {
@@ -283,7 +284,17 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   .section { padding: 96px 0; }
 }
 
+/* ===== Scroll animations ===== */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+  transition-delay: var(--delay, 0ms);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
 }
