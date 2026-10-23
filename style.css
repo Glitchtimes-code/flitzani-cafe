@@ -87,7 +87,7 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   /* Φωτογραφία images/hero.webp κάτω από σκούρο overlay. Αν το αρχείο λείπει,
      το url() αγνοείται και φαίνεται το radial-gradient. */
   background:
-    linear-gradient(180deg, rgba(26,20,16,.6), rgba(26,20,16,.95)),
+    linear-gradient(180deg, rgba(26,20,16,.72), rgba(26,20,16,.95)),
     url("images/hero.webp") center / cover no-repeat,
     radial-gradient(circle at 70% 20%, #4a3424 0%, var(--bg) 60%);
 }
@@ -148,7 +148,7 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   border-radius: var(--radius);
   /* Φωτογραφία images/sweets.webp, με gradient ως fallback */
   background:
-    url("images/sweets.webp") center / cover no-repeat,
+    url("images/sweets.webp") 38% center / cover no-repeat,
     linear-gradient(135deg, #3a2a1e 0%, var(--surface) 100%);
 }
 
