@@ -141,6 +141,17 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
 /* ===== Μενού ===== */
 .section-intro { color: var(--muted); max-width: 52ch; margin: 0 0 32px; }
 
+.menu-banner {
+  height: 200px;
+  margin: 0 0 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  /* Φωτογραφία images/sweets.webp, με gradient ως fallback */
+  background:
+    url("images/sweets.webp") center / cover no-repeat,
+    linear-gradient(135deg, #3a2a1e 0%, var(--surface) 100%);
+}
+
 .menu-grid { display: grid; gap: 20px; }
 
 .menu-card {
@@ -162,6 +173,7 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
 .menu-list .price { color: var(--accent); font-weight: 600; white-space: nowrap; }
 
 @media (min-width: 800px) {
+  .menu-banner { height: 320px; margin-bottom: 40px; }
   .menu-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
 }
 

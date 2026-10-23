@@ -90,7 +90,7 @@ if (form) {
 // Scroll animations (fade-in) με IntersectionObserver
 (function initReveal() {
   const targets = document.querySelectorAll(
-    ".section h2, .story-text, .story-media, .menu-card, .hours-list, .contact-form, .map-info, .map-frame"
+    ".section h2, .story-text, .story-media, .menu-banner, .menu-card, .hours-list, .contact-form, .map-info, .map-frame"
   );
   if (!("IntersectionObserver" in window)) return; // χωρίς υποστήριξη, όλα μένουν ορατά
 
