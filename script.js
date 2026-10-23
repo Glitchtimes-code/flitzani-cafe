@@ -2,18 +2,26 @@
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("nav");
 
-toggle.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
+function setMenu(open) {
+  nav.classList.toggle("open", open);
   toggle.setAttribute("aria-expanded", String(open));
-});
+  toggle.setAttribute("aria-label", open ? "Κλείσιμο μενού" : "Άνοιγμα μενού");
+}
+
+toggle.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
 
 // Κλείσιμο του μενού όταν πατηθεί κάποιο link
 nav.querySelectorAll("a").forEach((link) =>
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    toggle.setAttribute("aria-expanded", "false");
-  })
+  link.addEventListener("click", () => setMenu(false))
 );
+
+// Κλείσιμο με Escape (και επιστροφή του focus στο κουμπί)
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && nav.classList.contains("open")) {
+    setMenu(false);
+    toggle.focus();
+  }
+});
 
 // Ωράριο: επισήμανση σημερινής ημέρας + badge "Ανοιχτά / Κλειστά"
 // Χρησιμοποιούμε ώρα Ελλάδας ώστε το αποτέλεσμα να είναι σωστό όπου κι αν βρίσκεται ο επισκέπτης.

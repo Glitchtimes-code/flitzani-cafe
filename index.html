@@ -85,6 +85,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#top">Μετάβαση στο περιεχόμενο</a>
+
   <header class="site-header">
     <a href="#top" class="logo">
       <svg class="logo-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
@@ -102,7 +104,7 @@
     <button class="nav-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
-    <nav id="nav" class="nav">
+    <nav id="nav" class="nav" aria-label="Κύρια πλοήγηση">
       <a href="#story">Ιστορία</a>
       <a href="#menu">Μενού</a>
       <a href="#hours">Ωράριο</a>
@@ -111,7 +113,7 @@
     </nav>
   </header>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
 
     <!-- HERO -->
     <section class="hero">
@@ -205,7 +207,7 @@
     <section id="hours" class="section section-alt">
       <div class="container">
         <h2>Ωράριο</h2>
-        <p id="open-badge" class="badge" aria-live="polite" hidden></p>
+        <p id="open-badge" class="badge" hidden></p>
 
         <ul class="hours-list">
           <li data-day="1" data-open="07:30" data-close="22:00"><span>Δευτέρα</span><span>07:30 – 22:00</span></li>
@@ -270,7 +272,7 @@
             </p>
             <a class="btn btn-primary"
                href="https://www.google.com/maps/dir/?api=1&destination=37.9790,23.7255"
-               target="_blank" rel="noopener noreferrer">Οδηγίες</a>
+               target="_blank" rel="noopener noreferrer">Οδηγίες<span class="sr-only"> (ανοίγει σε νέα καρτέλα)</span></a>
           </address>
 
           <div class="map-frame">
@@ -280,7 +282,7 @@
               loading="lazy"></iframe>
             <a class="map-link"
                href="https://www.openstreetmap.org/?mlat=37.9790&amp;mlon=23.7255#map=17/37.9790/23.7255"
-               target="_blank" rel="noopener noreferrer">Προβολή μεγαλύτερου χάρτη</a>
+               target="_blank" rel="noopener noreferrer">Προβολή μεγαλύτερου χάρτη<span class="sr-only"> (ανοίγει σε νέα καρτέλα)</span></a>
           </div>
         </div>
       </div>
