@@ -14,6 +14,8 @@
   --radius: 12px;
   --gutter: 20px;
   --header-h: 64px;
+  /* Οριζόντιο περιθώριο ώστε header, hero και sections να έχουν το ίδιο αριστερό όριο (container 1000px) */
+  --pad-x: max(var(--gutter), calc(50% - 500px + var(--gutter)));
 }
 
 /* ===== Reset ===== */
@@ -46,7 +48,7 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
   position: fixed; inset: 0 0 auto 0; z-index: 100;
   height: var(--header-h);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 var(--gutter);
+  padding: 0 var(--pad-x);
   background: rgba(26, 20, 16, .92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -80,13 +82,13 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
 .hero {
   min-height: 100svh;
   display: flex; align-items: center;
-  padding: calc(var(--header-h) + 40px) var(--gutter) 60px;
+  padding: calc(var(--header-h) + 40px) var(--pad-x) 60px;
   /* Προσωρινό φόντο: αντικατάστησέ το με φωτογραφία (Unsplash/Pexels) */
   background:
     linear-gradient(180deg, rgba(26,20,16,.55), rgba(26,20,16,.95)),
     radial-gradient(circle at 70% 20%, #4a3424 0%, var(--bg) 60%);
 }
-.hero-content { max-width: 640px; margin: 0 auto; width: 100%; }
+.hero-content { max-width: 640px; width: 100%; }
 .eyebrow {
   color: var(--accent); text-transform: uppercase;
   letter-spacing: .12em; font-size: .8rem; font-weight: 600; margin: 0 0 16px;
@@ -252,7 +254,6 @@ h2 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
     background: none; border: 0;
   }
   .nav a { padding: 0; border: 0; }
-  .hero-content { margin: 0 auto; }
   .section { padding: 96px 0; }
 }
 
