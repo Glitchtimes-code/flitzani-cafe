@@ -290,8 +290,41 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Φλιτζάνι. Φανταστικό καφέ για σκοπούς επίδειξης.</p>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Φλιτζάνι</p>
+        <p>Specialty καφές και σπιτικά γλυκά στην καρδιά της Ψυρρής. Ο καφές σου, χωρίς βιασύνη.</p>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Επικοινωνία</h2>
+        <address>
+          Αρμοδίου 12<br>
+          Ψυρρή, Αθήνα 105 54<br>
+          <a href="tel:+302105550123">210 555 0123</a><br>
+          <a href="mailto:hello@filizani.example">hello@filizani.example</a>
+        </address>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Ωράριο</h2>
+        <ul class="footer-hours">
+          <li><span>Δευτέρα – Παρασκευή</span><span>07:30 – 22:00</span></li>
+          <li><span>Σάββατο</span><span>08:30 – 23:00</span></li>
+          <li><span>Κυριακή</span><span>09:00 – 20:00</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© <span id="year"></span> Φλιτζάνι. Φανταστικό καφέ για σκοπούς επίδειξης.</p>
   </footer>
+
+  <!-- Σταθερή μπάρα με γρήγορες ενέργειες, μόνο σε κινητό -->
+  <nav class="mobile-cta" aria-label="Γρήγορες ενέργειες">
+    <a class="btn btn-primary" href="tel:+302105550123">Κάλεσέ μας</a>
+    <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=37.9790,23.7255"
+       target="_blank" rel="noopener noreferrer">Οδηγίες<span class="sr-only"> (ανοίγει σε νέα καρτέλα)</span></a>
+  </nav>
 
   <script src="script.js"></script>
 </body>

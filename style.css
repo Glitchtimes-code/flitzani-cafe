@@ -312,9 +312,53 @@ main:focus { outline: none; } /* το main παίρνει focus μόνο προ�
 
 /* ===== Footer ===== */
 .site-footer {
-  padding: 28px var(--gutter);
-  text-align: center; color: var(--muted); font-size: .85rem;
+  padding: 48px 0 28px;
+  color: var(--muted); font-size: .9rem;
   border-top: 1px solid var(--border);
+}
+.footer-grid { display: grid; gap: 32px; }
+.footer-brand { margin: 0 0 8px; font-family: var(--font-head); font-size: 1.4rem; color: var(--accent); }
+.footer-title {
+  margin: 0 0 10px; font-family: var(--font-body); font-size: .8rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--text);
+}
+.site-footer p { margin: 0; }
+.site-footer address { font-style: normal; }
+.site-footer a:hover { color: var(--accent); }
+.footer-hours { list-style: none; margin: 0; padding: 0; }
+.footer-hours li { display: flex; justify-content: space-between; gap: 16px; padding: 3px 0; }
+.footer-hours li span:last-child { white-space: nowrap; }
+.site-footer .footer-bottom {
+  width: calc(100% - 2 * var(--gutter)); max-width: calc(1000px - 2 * var(--gutter));
+  margin: 36px auto 0; padding: 20px 0 0;
+  border-top: 1px solid var(--border); text-align: center; font-size: .8rem;
+}
+
+/* ===== Σταθερή μπάρα ενεργειών (κινητό) ===== */
+.mobile-cta {
+  position: fixed; inset: auto 0 0 0; z-index: 90;
+  display: flex; gap: 10px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: rgba(26, 20, 16, .94);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border);
+}
+.mobile-cta .btn { flex: 1; text-align: center; padding: 12px 16px; }
+body { padding-bottom: 72px; } /* ώστε η μπάρα να μη σκεπάζει το τέλος της σελίδας */
+
+@media (min-width: 800px) {
+  .mobile-cta { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* Footer: 2 στήλες σε μεσαία πλάτη, 3 σε μεγάλη, ώστε το ωράριο να μην σπάει σε δύο γραμμές */
+@media (min-width: 680px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
+}
+@media (min-width: 960px) {
+  .footer-grid { grid-template-columns: 1.2fr .9fr 1.2fr; gap: 40px; }
+  .footer-grid > :first-child { grid-column: auto; }
 }
 
 /* ===== Desktop ===== */
